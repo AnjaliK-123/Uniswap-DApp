@@ -34,3 +34,20 @@ This project is a decentralized exchange (DEX) built on the Ethereum blockchain,
    git clone https://github.com/AnjaliK-123/Uniswap-DApp
    cd Uniswap-DApp
    ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Start the development server:
+   ```bash
+   npm run dev
+   ```
+4. Access the application:
+   - Open your browser and navigate to `http://localhost:3000`.
+   - Connect your MetaMask wallet to the Goerli or Sepolia test network.
+   - Interact with the DEX to swap tokens, add liquidity, and manage your token balances.
+
+## Website
+
+https://uniswap-ui-rho.vercel.app/

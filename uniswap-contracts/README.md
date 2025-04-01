@@ -33,6 +33,10 @@ UniswapV2 was written three years ago and uses outdated versions of Solidity too
 
 4. **Generate a line coverage report** to assess the quality of your tests.
 
+5. **Deploy the contracts** to a local Ethereum network.
+   - Use `npx hardhat node` to start a local Ethereum network.
+   - Use `npx hardhat run scripts/deploy.js --network localhost` to deploy the contracts.
+
 ## Additional Notes
 
 You may use any online resources for the project to aid in your learning and implementation.
