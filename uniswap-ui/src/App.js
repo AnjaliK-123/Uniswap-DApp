@@ -7,6 +7,8 @@ import SwapManager from "./components/SwapManager";
 import ReservesChart from "./components/ReservesChart";
 import PriceDistributionChart from "./components/PriceDistributionChart";
 import "./App.css";
+import NLInteractivity from "./components/NLInteractivity";
+import TestEvaluation from "./components/TestEvaluation";
 
 import config from "./config.json";
 
@@ -16,7 +18,8 @@ function App() {
 
   return (
     <div className="app-container">
-      <h1>My Uniswap UI</h1>
+      <h1>Uniswap DApp</h1>
+      <NLInteractivity />
       <MintTokens /> 
       <TokenBalance />
       <PoolSelector selectedPool={selectedPool} setSelectedPool={setSelectedPool} />
@@ -25,6 +28,7 @@ function App() {
           <div className="flex-container">
             <LiquidityManager pool={selectedPool} />
             <SwapManager pool={selectedPool} />
+            <TestEvaluation />
           </div>
           <ReservesChart pool={selectedPool} />
           <PriceDistributionChart pool={selectedPool} />

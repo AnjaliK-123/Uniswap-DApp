@@ -21,6 +21,7 @@ export default function MintTokens() {
 
       const amountToMint = ethers.utils.parseEther(mintAmount);
       const tx = await tokenContract.mint(amountToMint, userAddr);
+      console.log("Transaction sent: " + tx.hash);
       setStatus("Transaction sent: " + tx.hash);
       await tx.wait();
       setStatus("Minting successful! Minted " + mintAmount + " tokens.");

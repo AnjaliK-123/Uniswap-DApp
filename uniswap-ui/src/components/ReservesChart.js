@@ -17,7 +17,7 @@ ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, T
 
 
 const pairABI = [
-  "function getReserves() external view returns (uint112, uint112, uint32)"
+  "function getReserves() external view returns (uint112, uint112, uint32)",
 ];
 
 export default function ReservesChart({ pool }) {
@@ -48,7 +48,9 @@ export default function ReservesChart({ pool }) {
       try {
         const signer = await getSigner();
         const pairContract = new ethers.Contract(pool.address, pairABI, signer);
+        console.log("Fetching reserves from contract:", pool.address);    
         const [reserveA, reserveB] = await pairContract.getReserves();
+        console.log("Reserve A:", reserveA.toString(), "Reserve B:", reserveB.toString());
         const now = new Date().toLocaleTimeString();
 
         setChartData((prev) => ({

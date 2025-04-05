@@ -1,10 +1,10 @@
-// uniswap-contracts/scripts/deploy.js
 const fs = require("fs");
 const path = require("path");
 require("dotenv").config();
+const { ethers } = require("hardhat");
 
 async function main() {
-  const [deployer] = await ethers.getSigners();
+  const [deployer] = await ethers.getSigners(); // Get the deployer signer
   console.log("Deploying contracts with account:", deployer.address);
   console.log("Account balance:", (await deployer.getBalance()).toString());
 
@@ -42,7 +42,6 @@ async function main() {
   console.log("Token B deployed to:", tokenB.address);
 
   // 5. Automatically mint tokens to the deployer
-  // Use the environment variable TOKENS_TO_MINT or default to "100"
   const tokensToMint = process.env.TOKENS_TO_MINT || "100";
   let tx = await tokenA.mint(ethers.utils.parseEther(tokensToMint), deployer.address);
   await tx.wait();
@@ -68,7 +67,6 @@ async function main() {
     PAIR_ADDRESS: pairAddress,
   };
 
-  // Write the config file to uniswap-ui/config.json (adjust the path if needed)
   const configPath = path.join(__dirname, "..", "uniswap-ui", "config.json");
   fs.mkdirSync(path.dirname(configPath), { recursive: true });
   fs.writeFileSync(configPath, JSON.stringify(config, null, 2));

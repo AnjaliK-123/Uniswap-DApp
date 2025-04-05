@@ -1,9 +1,11 @@
 import { ethers } from "ethers";
 
+// Update the URL to the Sepolia RPC endpoint
 export function getProvider() {
-
-  return new ethers.providers.JsonRpcProvider("http://127.0.0.1:8545",
-    { name: "hardhat", chainId: 31337 });
+  return new ethers.providers.JsonRpcProvider("https://virtual.sepolia.rpc.tenderly.co/c53d9f7f-22af-4504-b21d-befad728c9d3", {
+    name: "sepolia",
+    chainId: 11155111, // Sepolia chain ID
+  });
 }
 
 export async function getSigner() {

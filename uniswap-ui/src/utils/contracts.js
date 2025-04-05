@@ -11,7 +11,7 @@ export const TOKEN_B_ADDRESS = config.TOKEN_B_ADDRESS;
 export const PAIR_ADDRESS    = config.PAIR_ADDRESS;
 
 export function getProvider() {
-  return new ethers.providers.JsonRpcProvider("http://127.0.0.1:8545");
+  return new ethers.providers.JsonRpcProvider("https://virtual.sepolia.rpc.tenderly.co/c53d9f7f-22af-4504-b21d-befad728c9d3");
 }
 
 export async function getSigner() {
